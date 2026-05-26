@@ -1,27 +1,18 @@
+using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
+using Uninove.web.Models;
 
-namespace ProjetoMVC.Controllers
+namespace Uninove.web.Controllers;
+
+public class AlunoController : Controller
 {
-    public class AlunoController : Controller
+    public IActionResult Index()
     {
-        // Acessível via /Aluno
-        public IActionResult Index()
-        {
-            ViewBag.Nome = "Ana Silva";
-            ViewBag.Curso = "Análise e Desenvolvimento de Sistemas";
-            ViewBag.Semestre = "3º Semestre";
+ViewBag.Nome = "Gustavo Marks Figueiredo do vale";
+ViewBag.Curso = "Analise de Sistemas";
+ViewBag.Semestre = 1;
 
-            return View();
-        }
-
-        // Acessível via /Aluno/Detalhes/1
-        public IActionResult Detalhes(int id)
-        {
-            ViewBag.Id = id;
-            ViewBag.Nome = "Ana Silva";
-            ViewBag.RA = "12345678";
-            
-            return View();
-        }
+        return View();
     }
-}
+
+}   
